@@ -6,7 +6,7 @@ class DFS {
 
     int nodes;
     boolean visited[];
-    String connectedNodes="";
+    String connectednodes="";
     LinkedList<Integer>[] graphconnection;
 
     @SuppressWarnings({"unchecked"}) // added to remove array of linkedlist warning;
@@ -20,20 +20,20 @@ class DFS {
     }
 
     // Adding the edges for the node
-    public void addEdges(int startNode, int endNode) {
-        graphconnection[startNode].add(endNode);
+    public void addEdges(int startnode, int endnode) {
+        graphconnection[startnode].add(endnode);
     }
 
-    public void startNode(int startNode) {
-        depthFirstSearchAlg(startNode);
-        System.out.println(connectedNodes);
+    public void startNode(int startnode) {
+        depthFirstSearchAlg(startnode);
+        System.out.println(connectednodes);
     }
 
    
     private void depthFirstSearchAlg(int currentnode) {
         
         visited[currentnode]=true;
-        connectedNodes=connectedNodes+"->"+currentnode;
+        connectednodes=connectednodes+"->"+currentnode;
         var node =graphconnection[currentnode];
 
         Iterator<Integer> i= node.iterator();
