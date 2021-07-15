@@ -9,8 +9,9 @@ class DFS {
     String connectedNodes="";
     LinkedList<Integer>[] graphconnection;
 
+    @SuppressWarnings({"unchecked"}) // added to remove array of linkedlist warning;
     public DFS(int nodes) {
-        this.nodes = nodes;
+        this.nodes = nodes;       
         graphconnection = new LinkedList[nodes];
         visited = new boolean[nodes];
         for (int i = 0; i < nodes; i++) {
@@ -28,13 +29,14 @@ class DFS {
         System.out.println(connectedNodes);
     }
 
+   
     private void depthFirstSearchAlg(int currentnode) {
         
         visited[currentnode]=true;
         connectedNodes=connectedNodes+"->"+currentnode;
         var node =graphconnection[currentnode];
 
-        Iterator i= node.iterator();
+        Iterator<Integer> i= node.iterator();
             
         if(i.hasNext()){
             int itrnode=(int)i.next();
