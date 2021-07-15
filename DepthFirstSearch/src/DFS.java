@@ -38,7 +38,7 @@ class DFS {
 
         Iterator<Integer> i= node.iterator();
             
-        if(i.hasNext()){
+        while(i.hasNext()){
             int itrnode=(int)i.next();
             if(!visited[itrnode])
             depthFirstSearchAlg(itrnode);
@@ -53,8 +53,9 @@ class DFS {
         DFS qr = new DFS(5);
 
         // static values for edges
-        qr.addEdges(0, 2);
+        qr.addEdges(0, 1);
         //qr.addEdges();
+        qr.addEdges(1, 1);
         qr.addEdges(1, 2);
 
         qr.startNode(0);
